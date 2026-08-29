@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body{
+            background:rgba(0,0,0);
+        }
+        .container{
+            max-width: 1140px;
+            margin:0 auto;
+        }
+        .counter-wrapper{
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            height:100vh;
+        }
+        .counter-body{
+             /* border:1px solid #dddddd; */
+            border-radius: 20px;
+            height:300px;
+            width:600px;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            gap:50px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+
+        }
+        .counter-btn{
+            font-size:32px;
+            padding:0 20px;
+            border:none;
+            box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.15);
+            cursor:pointer;
+        }
+        .number{
+            font-size:32px;
+            color:rgba(255,255,255, 0.5)
+        }
+        .btn{
+            cursor:pointer;
+            font-size:18px;
+            border:none;
+            box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.15);
+            padding:10px 15px;
+            border-radius:20px;
+        }
+        .counter-btn:disabled {
+            opacity: 0.4;
+             cursor: not-allowed;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="counter-wrapper">
+            <div class="counter-body">
+                <button class="counter-btn minus-btn">-</button>
+                <span class="number"></span>
+                <button class="counter-btn add-btn">+</button>
+                <button class="btn" id="reset">Reset</button>
+                <input type="number" class="step-input" value="1" min="1">
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        const addBtn=document.querySelector('.add-btn');
+        const minusBtn=document.querySelector('.minus-btn');
+        const number=document.querySelector('.number');
+        const resetBtn=document.getElementById('reset');
+        const stepInput=document.querySelector('.step-input');
+        
+        let count=0;
+        let maxCount=10;
+        number.textContent=0;
+        minusBtn.disabled=true;
+
+        function updateCounter(){
+            number.textContent=count;
+            minusBtn.disabled=count===0;
+            addBtn.disabled=count===maxCount;
+        }
+        updateCounter();
+        addBtn.addEventListener('click',()=>{
+            const stepSize=Number(stepInput.value);
+            if(count<maxCount){
+                count=Math.min(count+stepSize,maxCount );
+                updateCounter();
+            }
+           
+        })
+        minusBtn.addEventListener('click',()=>{ 
+            const stepSize=Number(stepInput.value);
+            if(count>0){
+                count=Math.max(count-stepSize,0);
+                updateCounter();
+            }
+        })
+        resetBtn.addEventListener('click', ()=>{
+            count=0;
+            updateCounter();
+        })
+    </script>
+    </body>
+</html>
