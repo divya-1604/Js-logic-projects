@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Modern Tabs</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        background:
+          radial-gradient(circle at top left, #4f46e5, transparent 35%),
+          radial-gradient(circle at bottom right, #9333ea, transparent 35%),
+          #0f172a;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: #ffffff;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 900px;
+        padding: 20px;
+      }
+
+      .tabs-wrapper {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+
+        border-radius: 24px;
+
+        padding: 35px;
+
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+      }
+
+      /* Heading */
+
+      .tabs-heading {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .tabs-heading h1 {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+
+      .tabs-heading p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 15px;
+      }
+
+      /* Tab Buttons */
+
+      .tab-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        background: rgba(0, 0, 0, 0.2);
+
+        padding: 8px;
+
+        border-radius: 14px;
+
+        margin-bottom: 30px;
+      }
+
+      .tab-btn {
+        flex: 1;
+
+        padding: 14px 20px;
+
+        border: none;
+        border-radius: 10px;
+
+        background: transparent;
+
+        color: rgba(255, 255, 255, 0.6);
+
+        font-size: 15px;
+        font-weight: 600;
+
+        cursor: pointer;
+
+        transition:
+          background 0.3s ease,
+          color 0.3s ease,
+          transform 0.2s ease;
+      }
+
+      .tab-btn:hover {
+        color: #ffffff;
+      }
+
+      .tab-btn.active {
+        background: #ffffff;
+        color: #111827;
+
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Tab Content */
+
+      .tab-contents {
+        min-height: 220px;
+      }
+
+      .tab-content {
+        display: none;
+        animation: fadeIn 0.3s ease;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+      .tab-content h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+      .tab-content p {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 16px;
+        line-height: 1.8;
+        max-width: 700px;
+      }
+      /* Cards inside content */
+
+      .content-grid {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 15px;
+
+        margin-top: 25px;
+      }
+
+      .content-card {
+        background: rgba(255, 255, 255, 0.06);
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        padding: 20px;
+
+        border-radius: 14px;
+      }
+
+      .content-card h3 {
+        font-size: 17px;
+        margin-bottom: 8px;
+      }
+
+      .content-card p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      /* Animation */
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
+
+      @media (max-width: 700px) {
+        .tabs-wrapper {
+          padding: 25px;
+        }
+
+        .tabs-heading h1 {
+          font-size: 28px;
+        }
+
+        .tab-buttons {
+          flex-direction: column;
+        }
+
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="tabs-wrapper">
+        <div class="tabs-heading">
+          <h1>Explore Our Services</h1>
+
+          <p>Learn more about what we offer and how we can help you.</p>
+        </div>
+
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="about">About</button>
+
+          <button class="tab-btn" data-tab="services">Services</button>
+
+          <button class="tab-btn" data-tab="contact">Contact</button>
+        </div>
+
+        <div class="tab-contents">
+          <!-- About -->
+
+          <div class="tab-content active" id="about">
+            <h2>About Us</h2>
+
+            <p>
+              We create modern, fast and user-friendly websites that help
+              businesses build a strong presence online.
+            </p>
+
+            <div class="content-grid">
+              <div class="content-card">
+                <h3>Modern Design</h3>
+
+                <p>Clean and modern interfaces designed for today's users.</p>
+              </div>
+
+              <div class="content-card">
+                <h3>Responsive</h3>
+
+                <p>Websites that look great on desktop, tablet and mobile.</p>
+              </div>
+
+              <div class="content-card">
+                <h3>Performance</h3>
+
+                <p>Lightweight and optimized experiences for faster loading.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services -->
+
+          <div class="tab-content" id="services">
+            <h2>Our Services</h2>
+
+            <p>
+              We provide a range of frontend development services for modern
+              websites.
+            </p>
+
+            <div class="content-grid">
+              <div class="content-card">
+                <h3>Web Development</h3>
+
+                <p>HTML, CSS and JavaScript based websites.</p>
+              </div>
+
+              <div class="content-card">
+                <h3>WordPress</h3>
+
+                <p>Custom WordPress websites and Elementor/Divi development.</p>
+              </div>
+
+              <div class="content-card">
+                <h3>UI Development</h3>
+
+                <p>Interactive and responsive user interfaces.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact -->
+
+          <div class="tab-content" id="contact">
+            <h2>Get In Touch</h2>
+
+            <p>
+              Have a project in mind? We'd love to hear from you and discuss how
+              we can help.
+            </p>
+
+            <div class="content-grid">
+              <div class="content-card">
+                <h3>Email</h3>
+
+                <p>hello@example.com</p>
+              </div>
+
+              <div class="content-card">
+                <h3>Phone</h3>
+
+                <p>+91 98765 43210</p>
+              </div>
+
+              <div class="content-card">
+                <h3>Location</h3>
+
+                <p>India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const tabContents = document.querySelectorAll(".tab-content");
+      tabBtns.forEach((tabBtn) => {
+        tabBtn.addEventListener("click", () => {
+          tabBtns.forEach((btn) => {
+            btn.classList.remove("active");
+          });
+          tabBtn.classList.add("active");
+          const tabName = tabBtn.dataset.tab;
+          tabContents.forEach((content) => {
+            content.classList.remove("active");
+          });
+          const activeContent = document.getElementById(tabName);
+          activeContent.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
