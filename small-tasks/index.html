@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .hide {
+        display: none;
+      }
+      .counter-container {
+        border: 1px solid black;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 600px;
+        gap: 50px;
+      }
+      .counter-number {
+        font-size: 20px;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Task 1: Change Text -->
+    <h2 class="message">Hello</h2>
+    <button class="change-btn">Change</button>
+    <p class="content">This is some content.</p>
+    <button class="toggle-btn">Hide</button>
+    <div class="counter-container">
+      <button class="btn minus-btn">-</button>
+      <span class="counter-number"></span>
+      <button class="btn add-btn">+</button>
+    </div>
+    <script>
+      const changeBtn = document.querySelector(".change-btn");
+      const message = document.querySelector(".message");
+      changeBtn.addEventListener("click", function () {
+        message.textContent = "Welcome to JavaScript!";
+      });
+
+      const content = document.querySelector(".content");
+      const toggle = document.querySelector(".toggle-btn");
+      toggle.addEventListener("click", function () {
+        if (content.classList.contains("hide")) {
+          content.classList.remove("hide");
+          toggle.textContent = "Hide";
+        } else {
+          content.classList.add("hide");
+          toggle.textContent = "Show";
+        }
+      });
+      // Counter-code
+      const counterNumber = document.querySelector(".counter-number");
+      const minusBtn = document.querySelector(".minus-btn");
+      const plusBtn = document.querySelector(".add-btn");
+      let count = 0;
+      counterNumber.textContent = count;
+      minusBtn.disabled = true;
+      const maxCount = 10;
+      function updateCounter() {
+        counterNumber.textContent = count;
+        plusBtn.disabled = count === maxCount;
+        minusBtn.disabled = count === 0;
+      }
+      plusBtn.addEventListener("click", function () {
+        if (count < maxCount) {
+          count = count + 1;
+          updateCounter();
+        }
+      });
+      minusBtn.addEventListener("click", function () {
+        count = count - 1;
+        updateCounter();
+      });
+    </script>
+  </body>
+</html>
