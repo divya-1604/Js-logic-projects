@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pure Linen — Nova Living</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="collection.css" />
+    <style>
+      :root {
+        --ivory: #f5f1e8;
+        --cream: #faf8f3;
+        --olive: #737965;
+        --dark: #1d1d19;
+        --brown: #746153;
+        --stone: #ded8cc;
+        --white: #ffffff;
+
+        --container: 1200px;
+
+        --serif: "Playfair Display", serif;
+        --sans: "DM Sans", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--cream);
+        color: var(--dark);
+
+        font-family: var(--sans);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      /* Announcement */
+
+      .announcement {
+        padding: 10px 20px;
+
+        background: var(--dark);
+        color: var(--white);
+
+        text-align: center;
+
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      /* Header */
+
+      .header {
+        height: 82px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 40px;
+
+        background: var(--cream);
+      }
+
+      .logo {
+        font-family: var(--serif);
+
+        font-size: 28px;
+
+        letter-spacing: 0.08em;
+      }
+
+      .nav {
+        display: flex;
+        gap: 32px;
+      }
+
+      .nav a,
+      .header-actions a {
+        font-size: 13px;
+      }
+
+      .header-actions {
+        display: flex;
+        gap: 22px;
+      }
+
+      /* Common */
+
+      .eyebrow {
+        font-size: 11px;
+
+        font-weight: 600;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.15em;
+      }
+
+      /* Collection Hero */
+
+      .collection-hero {
+        position: relative;
+
+        min-height: 500px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+
+        color: var(--white);
+      }
+
+      .collection-hero-image {
+        position: absolute;
+        inset: 0;
+
+        background: url("https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=2000&q=85")
+          center / cover no-repeat;
+      }
+
+      .collection-hero-overlay {
+        position: absolute;
+        inset: 0;
+
+        background: rgba(0, 0, 0, 0.35);
+      }
+
+      .collection-hero-content {
+        position: relative;
+        z-index: 1;
+
+        text-align: center;
+
+        padding: 30px;
+      }
+
+      .collection-hero h1 {
+        margin: 18px 0;
+
+        font-family: var(--serif);
+
+        font-size: clamp(55px, 8vw, 100px);
+
+        font-weight: 400;
+
+        line-height: 0.95;
+      }
+
+      .collection-hero-content > p:last-child {
+        max-width: 450px;
+
+        margin-inline: auto;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+      }
+
+      /* Collection Intro */
+
+      .collection-intro {
+        padding: 110px 20px;
+
+        text-align: center;
+      }
+
+      .collection-intro-inner {
+        max-width: 760px;
+
+        margin-inline: auto;
+      }
+
+      .collection-intro h2 {
+        margin: 20px 0 25px;
+
+        font-family: var(--serif);
+
+        font-size: clamp(40px, 5vw, 68px);
+
+        font-weight: 400;
+
+        line-height: 1.05;
+      }
+
+      .collection-intro p:last-child {
+        max-width: 580px;
+
+        margin-inline: auto;
+
+        font-size: 15px;
+
+        line-height: 1.8;
+
+        color: #68645d;
+      }
+
+      /* Toolbar */
+
+      .collection-products {
+        width: min(100% - 80px, var(--container));
+
+        margin-inline: auto;
+
+        padding-bottom: 120px;
+      }
+
+      .collection-toolbar {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        margin-bottom: 35px;
+
+        padding-bottom: 18px;
+
+        border-bottom: 1px solid var(--stone);
+      }
+
+      .collection-toolbar p {
+        font-size: 12px;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.08em;
+      }
+
+      .toolbar-actions {
+        display: flex;
+
+        gap: 10px;
+      }
+
+      .toolbar-actions button {
+        border: 1px solid var(--stone);
+
+        background: transparent;
+
+        padding: 10px 18px;
+
+        cursor: pointer;
+
+        font-size: 11px;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.08em;
+      }
+
+      /* Product Grid */
+
+      .product-grid {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        column-gap: 22px;
+
+        row-gap: 60px;
+      }
+
+      .product-image {
+        position: relative;
+
+        display: block;
+
+        aspect-ratio: 0.82;
+
+        overflow: hidden;
+      }
+
+      .image {
+        width: 100%;
+        height: 100%;
+
+        background-size: cover;
+        background-position: center;
+
+        transition: transform 0.5s ease;
+      }
+
+      .product-card:hover .image {
+        transform: scale(1.04);
+      }
+
+      .image-1 {
+        background-image: url("https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1000&q=85");
+      }
+
+      .image-2 {
+        background-image: url("https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=1000&q=85");
+      }
+
+      .image-3 {
+        background-image: url("https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85");
+      }
+
+      .image-4 {
+        background-image: url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85");
+      }
+
+      .image-5 {
+        background-image: url("https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1000&q=85");
+      }
+
+      .image-6 {
+        background-image: url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85");
+      }
+
+      .product-badge {
+        position: absolute;
+
+        z-index: 2;
+
+        top: 15px;
+        left: 15px;
+
+        padding: 7px 10px;
+
+        background: var(--white);
+
+        font-size: 10px;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.08em;
+      }
+
+      .product-info {
+        display: flex;
+
+        align-items: flex-start;
+        justify-content: space-between;
+
+        gap: 20px;
+
+        padding-top: 15px;
+      }
+
+      .product-info h3 {
+        font-size: 14px;
+
+        font-weight: 500;
+      }
+
+      .product-info p {
+        margin-top: 5px;
+
+        font-size: 12px;
+
+        color: #77736c;
+      }
+
+      .product-info strong {
+        font-size: 13px;
+
+        font-weight: 500;
+
+        white-space: nowrap;
+      }
+
+      /* Newsletter */
+
+      .newsletter {
+        width: min(100% - 80px, var(--container));
+
+        margin-inline: auto;
+
+        padding-block: 100px;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 80px;
+
+        align-items: center;
+
+        border-top: 1px solid var(--stone);
+      }
+
+      .newsletter h2 {
+        margin-top: 15px;
+
+        font-family: var(--serif);
+
+        font-size: clamp(40px, 5vw, 64px);
+
+        font-weight: 400;
+
+        line-height: 1.05;
+      }
+
+      .newsletter h2 em {
+        color: var(--olive);
+      }
+
+      .newsletter form {
+        display: flex;
+
+        border-bottom: 1px solid var(--dark);
+      }
+
+      .newsletter input {
+        flex: 1;
+
+        border: none;
+        outline: none;
+
+        background: transparent;
+
+        padding: 15px 0;
+      }
+
+      .newsletter button {
+        border: none;
+
+        background: transparent;
+
+        cursor: pointer;
+
+        font-size: 12px;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.08em;
+      }
+
+      /* Footer */
+
+      .footer {
+        display: grid;
+
+        grid-template-columns: 2fr repeat(3, 1fr);
+
+        gap: 50px;
+
+        padding: 80px 40px 30px;
+
+        background: var(--dark);
+
+        color: var(--white);
+      }
+
+      .footer-brand h2 {
+        font-family: var(--serif);
+
+        font-size: 35px;
+
+        font-weight: 400;
+      }
+
+      .footer-brand p {
+        max-width: 250px;
+
+        margin-top: 15px;
+
+        color: #bdb9b0;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+      }
+
+      .footer-column {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 12px;
+      }
+
+      .footer-column h4 {
+        margin-bottom: 8px;
+
+        font-size: 11px;
+
+        text-transform: uppercase;
+
+        letter-spacing: 0.12em;
+      }
+
+      .footer-column a {
+        color: #bdb9b0;
+
+        font-size: 13px;
+      }
+
+      .footer-bottom {
+        grid-column: 1 / -1;
+
+        margin-top: 50px;
+
+        padding-top: 20px;
+
+        border-top: 1px solid #44423e;
+
+        color: #99958c;
+
+        font-size: 11px;
+      }
+
+      /* Tablet */
+
+      @media (max-width: 900px) {
+        .nav {
+          display: none;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .newsletter {
+          grid-template-columns: 1fr;
+        }
+
+        .footer {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* Mobile */
+
+      @media (max-width: 600px) {
+        .header {
+          height: 70px;
+
+          padding-inline: 16px;
+        }
+
+        .header-actions a:not(:last-child) {
+          display: none;
+        }
+
+        .collection-products {
+          width: min(100% - 32px, var(--container));
+        }
+
+        .product-grid {
+          grid-template-columns: 1fr 1fr;
+
+          column-gap: 12px;
+
+          row-gap: 40px;
+        }
+
+        .product-info {
+          display: block;
+        }
+
+        .product-info strong {
+          display: block;
+
+          margin-top: 7px;
+        }
+
+        .newsletter {
+          width: min(100% - 32px, var(--container));
+
+          padding-block: 80px;
+        }
+
+        .footer {
+          grid-template-columns: 1fr 1fr;
+
+          padding-inline: 20px;
+        }
+
+        .footer-brand {
+          grid-column: 1 / -1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Announcement -->
+
+    <div class="announcement">Free shipping on orders above ₹999</div>
+
+    <!-- Header -->
+
+    <header class="header">
+      <a href="#" class="logo"> NOVA </a>
+
+      <nav class="nav">
+        <a href="#">New Arrivals</a>
+        <a href="#">Bedsheets</a>
+        <a href="#">Collections</a>
+        <a href="#">Journal</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#">Search</a>
+        <a href="#">Account</a>
+        <a href="#">Bag (0)</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Collection Hero -->
+
+      <section class="collection-hero">
+        <div class="collection-hero-image"></div>
+
+        <div class="collection-hero-overlay"></div>
+
+        <div class="collection-hero-content">
+          <p class="eyebrow">Collection 01</p>
+
+          <h1>Pure Linen</h1>
+
+          <p>
+            Naturally breathable fabrics, quiet colours and effortless comfort.
+          </p>
+        </div>
+      </section>
+
+      <!-- Collection Introduction -->
+
+      <section class="collection-intro">
+        <div class="collection-intro-inner">
+          <p class="eyebrow">The collection</p>
+
+          <h2>Made for slower mornings and softer evenings.</h2>
+
+          <p>
+            Discover our collection of linen bedding, designed with natural
+            textures and timeless colours that become more beautiful with use.
+          </p>
+        </div>
+      </section>
+
+      <!-- Products -->
+
+      <section class="collection-products">
+        <div class="collection-toolbar">
+          <p>12 products</p>
+
+          <div class="toolbar-actions">
+            <button>Filter</button>
+
+            <button>Sort by</button>
+          </div>
+        </div>
+
+        <div class="product-grid">
+          <!-- Product 1 -->
+
+          <article class="product-card">
+            <a href="#" class="product-image">
+              <span class="product-badge"> Bestseller </span>
+
+              <div class="image image-1"></div>
+            </a>
+
+            <div class="product-info">
+              <div>
+                <h3>Olive Linen Sheet Set</h3>
+
+                <p>Linen · Queen</p>
+              </div>
+
+              <strong> ₹2,999 </strong>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+
+          <article class="product-card">
+            <a href="#" class="product-image">
+              <div class="image image-2"></div>
+            </a>
+
+            <div class="product-info">
+              <div>
+                <h3>Sand Linen Sheet Set</h3>
+
+                <p>Linen · King</p>
+              </div>
+
+              <strong> ₹3,299 </strong>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+
+          <article class="product-card">
+            <a href="#" class="product-image">
+              <span class="product-badge"> New </span>
+
+              <div class="image image-3"></div>
+            </a>
+
+            <div class="product-info">
+              <div>
+                <h3>Natural Linen Set</h3>
+
+                <p>Linen · Queen</p>
+              </div>
+
+              <strong> ₹2,799 </strong>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+
+          <article class="product-card">
+            <a href="#" class="product-image">
+              <div class="image image-4"></div>
+            </a>
+
+            <div class="product-info">
+              <div>
+                <h3>Stonewashed Linen</h3>
+
+                <p>Linen · King</p>
+              </div>
+
+              <strong> ₹3,499 </strong>
+            </div>
+          </article>
+
+          <!-- Product 5 -->
+
+          <article class="product-card">
+            <a href="#" class="product-image">
+              <div class="image image-5"></div>
+            </a>
+
+            <div class="product-info">
+              <div>
+                <h3>Clay Linen Set</h3>
+
+                <p>Linen · Queen</p>
+              </div>
+
+              <strong> ₹2,899 </strong>
+            </div>
+          </article>
+
+          <!-- Product 6 -->
+
+          <article class="product-card">
+            <a href="#" class="product-image">
+              <div class="image image-6"></div>
+            </a>
+
+            <div class="product-info">
+              <div>
+                <h3>Warm Taupe Linen</h3>
+
+                <p>Linen · King</p>
+              </div>
+
+              <strong> ₹3,199 </strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+
+      <section class="newsletter">
+        <div>
+          <p class="eyebrow">Stay connected</p>
+
+          <h2>
+            Beautiful things,
+            <em>occasionally.</em>
+          </h2>
+        </div>
+
+        <form>
+          <input type="email" placeholder="Your email address" />
+
+          <button>Subscribe →</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <h2>NOVA</h2>
+
+        <p>Thoughtful textiles for beautiful living.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Shop</h4>
+
+        <a href="#">New Arrivals</a>
+        <a href="#">Bedsheets</a>
+        <a href="#">Collections</a>
+        <a href="#">Sale</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>About</h4>
+
+        <a href="#">Our Story</a>
+        <a href="#">Journal</a>
+        <a href="#">Contact</a>
+        <a href="#">FAQs</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Follow</h4>
+
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+      </div>
+
+      <div class="footer-bottom">© 2026 Nova Living</div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Filter Practice</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="collection">
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+
+    <header class="collection__header">
+      <h1>Our Products</h1>
+      <p>Practice Project — Product Filtering</p>
+    </header>
+
+
+    <div class="collection__layout">
+
+      <!-- =========================
+           FILTER SIDEBAR
+      ========================== -->
+
+      <aside class="filters">
+
+        <div class="filters__header">
+          <h2>Filters</h2>
+
+          <button type="button" id="clear-filters">
+            Clear Filters
+          </button>
+        </div>
+
+
+        <!-- COLOR FILTER -->
+
+        <div class="filter-group">
+
+          <h3>Color</h3>
+
+          <label class="filter-option">
+            <input
+              type="checkbox"
+              name="color"
+              value="black"
+            >
+            <span>Black</span>
+          </label>
+
+          <label class="filter-option">
+            <input
+              type="checkbox"
+              name="color"
+              value="white"
+            >
+            <span>White</span>
+          </label>
+
+          <label class="filter-option">
+            <input
+              type="checkbox"
+              name="color"
+              value="grey"
+            >
+            <span>Grey</span>
+          </label>
+
+        </div>
+
+
+        <!-- SIZE FILTER -->
+
+        <div class="filter-group">
+
+          <h3>Size</h3>
+
+          <label class="filter-option">
+            <input
+              type="checkbox"
+              name="size"
+              value="s"
+            >
+            <span>S</span>
+          </label>
+
+          <label class="filter-option">
+            <input
+              type="checkbox"
+              name="size"
+              value="m"
+            >
+            <span>M</span>
+          </label>
+
+          <label class="filter-option">
+            <input
+              type="checkbox"
+              name="size"
+              value="l"
+            >
+            <span>L</span>
+          </label>
+
+          <label class="filter-option">
+            <input
+              type="checkbox"
+              name="size"
+              value="xl"
+            >
+            <span>XL</span>
+          </label>
+
+        </div>
+
+
+        <!-- PRICE FILTER -->
+
+        <div class="filter-group">
+
+          <h3>Price</h3>
+
+          <div class="price-inputs">
+
+            <input
+              type="number"
+              id="min-price"
+              placeholder="Min"
+              min="0"
+            >
+
+            <input
+              type="number"
+              id="max-price"
+              placeholder="Max"
+              min="0"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- AVAILABILITY FILTER -->
+
+        <div class="filter-group">
+
+          <h3>Availability</h3>
+
+          <label class="filter-option">
+            <input
+              type="checkbox"
+              id="available-only"
+            >
+            <span>In stock only</span>
+          </label>
+
+        </div>
+
+      </aside>
+
+
+      <!-- =========================
+           PRODUCTS
+      ========================== -->
+
+      <section class="products-section">
+
+        <div class="products-header">
+
+          <p>
+            Products
+            <span id="product-count">6</span>
+          </p>
+
+        </div>
+
+
+        <div class="products-grid" id="products-grid">
+
+
+          <!-- PRODUCT 1 -->
+
+          <article
+            class="product-card"
+            data-color="black"
+            data-sizes="s,m,l"
+            data-price="999"
+            data-available="true"
+          >
+
+            <div class="product-card__image">
+              <span>Product Image</span>
+            </div>
+
+            <div class="product-card__content">
+
+              <h2>Classic T-Shirt</h2>
+
+              <p class="product-card__color">
+                Black
+              </p>
+
+              <p class="product-card__sizes">
+                S · M · L
+              </p>
+
+              <p class="product-card__price">
+                ₹999
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 2 -->
+
+          <article
+            class="product-card"
+            data-color="white"
+            data-sizes="m,l,xl"
+            data-price="1299"
+            data-available="true"
+          >
+
+            <div class="product-card__image">
+              <span>Product Image</span>
+            </div>
+
+            <div class="product-card__content">
+
+              <h2>Oversized T-Shirt</h2>
+
+              <p class="product-card__color">
+                White
+              </p>
+
+              <p class="product-card__sizes">
+                M · L · XL
+              </p>
+
+              <p class="product-card__price">
+                ₹1299
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 3 -->
+
+          <article
+            class="product-card"
+            data-color="black"
+            data-sizes="m,l,xl"
+            data-price="2499"
+            data-available="true"
+          >
+
+            <div class="product-card__image">
+              <span>Product Image</span>
+            </div>
+
+            <div class="product-card__content">
+
+              <h2>Premium Hoodie</h2>
+
+              <p class="product-card__color">
+                Black
+              </p>
+
+              <p class="product-card__sizes">
+                M · L · XL
+              </p>
+
+              <p class="product-card__price">
+                ₹2499
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 4 -->
+
+          <article
+            class="product-card"
+            data-color="grey"
+            data-sizes="s,m"
+            data-price="1999"
+            data-available="false"
+          >
+
+            <div class="product-card__image">
+              <span>Product Image</span>
+            </div>
+
+            <div class="product-card__content">
+
+              <h2>Basic Hoodie</h2>
+
+              <p class="product-card__color">
+                Grey
+              </p>
+
+              <p class="product-card__sizes">
+                S · M
+              </p>
+
+              <p class="product-card__price">
+                ₹1999
+              </p>
+
+              <span class="product-card__sold-out">
+                Sold Out
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 5 -->
+
+          <article
+            class="product-card"
+            data-color="black"
+            data-sizes="s,m"
+            data-price="799"
+            data-available="true"
+          >
+
+            <div class="product-card__image">
+              <span>Product Image</span>
+            </div>
+
+            <div class="product-card__content">
+
+              <h2>Slim Fit T-Shirt</h2>
+
+              <p class="product-card__color">
+                Black
+              </p>
+
+              <p class="product-card__sizes">
+                S · M
+              </p>
+
+              <p class="product-card__price">
+                ₹799
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCT 6 -->
+
+          <article
+            class="product-card"
+            data-color="white"
+            data-sizes="s,m,l,xl"
+            data-price="1599"
+            data-available="true"
+          >
+
+            <div class="product-card__image">
+              <span>Product Image</span>
+            </div>
+
+            <div class="product-card__content">
+
+              <h2>Cotton Shirt</h2>
+
+              <p class="product-card__color">
+                White
+              </p>
+
+              <p class="product-card__sizes">
+                S · M · L · XL
+              </p>
+
+              <p class="product-card__price">
+                ₹1599
+              </p>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+        <!-- NO RESULTS MESSAGE -->
+
+        <div
+          class="no-results"
+          id="no-results"
+          hidden
+        >
+          <h2>No products found</h2>
+          <p>
+            Try changing or clearing your filters.
+          </p>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- IMPORTANT:
+       You will write the JavaScript here later.
+  -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>

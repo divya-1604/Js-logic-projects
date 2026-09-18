@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CasaLoom Collection</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    /* =========================
+   RESET
+========================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #222;
+      background: #fff;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    /* =========================
+   GLOBAL
+========================= */
+
+    .container {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+   HEADER
+========================= */
+
+    .site-header {
+      border-bottom: 1px solid #e8e5df;
+    }
+
+    .header-inner {
+      min-height: 80px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .main-nav a {
+      font-size: 14px;
+      transition: opacity 0.2s ease;
+    }
+
+    .main-nav a:hover {
+      opacity: 0.6;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .header-actions a {
+      font-size: 14px;
+    }
+
+    /* =========================
+   COLLECTION INTRO
+========================= */
+
+    .collection-intro {
+      padding: 90px 0 70px;
+      text-align: center;
+    }
+
+    .collection-eyebrow {
+      margin-bottom: 18px;
+
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      color: #8a8176;
+    }
+
+    .collection-intro h1 {
+      margin-bottom: 20px;
+
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .collection-description {
+      max-width: 600px;
+      margin: 0 auto 25px;
+
+      font-size: 16px;
+      line-height: 1.7;
+      color: #666;
+    }
+
+    .product-count {
+      font-size: 13px;
+      color: #888;
+    }
+
+    /* =========================
+   TOOLBAR
+========================= */
+
+    .collection-toolbar {
+      border-top: 1px solid #e8e5df;
+      border-bottom: 1px solid #e8e5df;
+    }
+
+    .toolbar-inner {
+      min-height: 64px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .filter-button {
+      border: 0;
+      background: transparent;
+
+      font: inherit;
+      font-size: 14px;
+
+      cursor: pointer;
+    }
+
+    .sort {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sort label {
+      font-size: 13px;
+      color: #777;
+    }
+
+    .sort select {
+      padding: 8px 28px 8px 10px;
+
+      border: 1px solid #ddd;
+      background: #fff;
+
+      font-size: 13px;
+    }
+
+    /* =========================
+   PRODUCT GRID
+========================= */
+
+    .product-section {
+      padding: 50px 0 100px;
+    }
+
+    .product-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      column-gap: 20px;
+      row-gap: 50px;
+    }
+
+    /* =========================
+   PRODUCT CARD
+========================= */
+
+    .product-image {
+      display: block;
+
+      aspect-ratio: 1 / 1;
+
+      overflow: hidden;
+
+      background: #f3f1ed;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.03);
+    }
+
+    .product-info {
+      padding-top: 15px;
+    }
+
+    .product-info h2 {
+      margin-bottom: 7px;
+
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .product-price {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* =========================
+   FOOTER
+========================= */
+
+    .site-footer {
+      padding: 40px 0;
+
+      border-top: 1px solid #e8e5df;
+
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* =========================
+   TABLET
+========================= */
+
+    @media (max-width: 900px) {
+      .main-nav {
+        display: none;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* =========================
+   MOBILE
+========================= */
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 32px, 1200px);
+      }
+
+      .header-inner {
+        min-height: 65px;
+      }
+
+      .header-actions a:first-child {
+        display: none;
+      }
+
+      .collection-intro {
+        padding: 60px 0 50px;
+      }
+
+      .collection-intro h1 {
+        font-size: 42px;
+      }
+
+      .collection-description {
+        font-size: 14px;
+      }
+
+      .toolbar-inner {
+        min-height: 58px;
+      }
+
+      .product-section {
+        padding: 35px 0 70px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        column-gap: 12px;
+        row-gap: 35px;
+      }
+
+      .product-info {
+        padding-top: 10px;
+      }
+
+      .product-info h2 {
+        font-size: 14px;
+      }
+
+      .product-price {
+        font-size: 13px;
+      }
+    }
+  </style>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="logo">CasaLoom</a>
+
+        <nav class="main-nav">
+          <a href="#">New Arrivals</a>
+          <a href="#">Bedsheets</a>
+          <a href="#">King Size</a>
+          <a href="#">Queen Size</a>
+          <a href="#">Cotton</a>
+          <a href="#">Sale</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#">Search</a>
+          <a href="#">Account</a>
+          <a href="#">Cart (0)</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Collection Header -->
+    <main>
+      <section class="collection-intro">
+        <div class="container">
+          <p class="collection-eyebrow">CASA COLLECTION</p>
+
+          <h1>Pure Cotton</h1>
+
+          <p class="collection-description">
+            Soft, breathable and beautifully crafted bedsheets designed to make
+            everyday comfort feel special.
+          </p>
+
+          <p class="product-count">24 Products</p>
+        </div>
+      </section>
+
+      <!-- Toolbar -->
+      <section class="collection-toolbar">
+        <div class="container toolbar-inner">
+          <button class="filter-button">Filters</button>
+
+          <div class="sort">
+            <label for="sort">Sort by</label>
+
+            <select id="sort">
+              <option>Featured</option>
+              <option>Best Selling</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Grid -->
+      <section class="product-section">
+        <div class="container">
+          <div class="product-grid">
+            <!-- Product 1 -->
+            <article class="product-card">
+              <a href="#" class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80"
+                  alt="Floral cotton bedsheet"
+                />
+              </a>
+
+              <div class="product-info">
+                <h2>
+                  <a href="#">Floral Cotton Bedsheet</a>
+                </h2>
+
+                <p class="product-price">₹1,299</p>
+              </div>
+            </article>
+
+            <!-- Product 2 -->
+            <article class="product-card">
+              <a href="#" class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80"
+                  alt="Blue striped bedsheet"
+                />
+              </a>
+
+              <div class="product-info">
+                <h2>
+                  <a href="#">Blue Striped Bedsheet</a>
+                </h2>
+
+                <p class="product-price">₹1,499</p>
+              </div>
+            </article>
+
+            <!-- Product 3 -->
+            <article class="product-card">
+              <a href="#" class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1583845112203-454c7b0c2b31?auto=format&fit=crop&w=800&q=80"
+                  alt="Beige floral bedsheet"
+                />
+              </a>
+
+              <div class="product-info">
+                <h2>
+                  <a href="#">Beige Floral Bedsheet</a>
+                </h2>
+
+                <p class="product-price">₹1,599</p>
+              </div>
+            </article>
+
+            <!-- Product 4 -->
+            <article class="product-card">
+              <a href="#" class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?auto=format&fit=crop&w=800&q=80"
+                  alt="Green garden bedsheet"
+                />
+              </a>
+
+              <div class="product-info">
+                <h2>
+                  <a href="#">Green Garden Bedsheet</a>
+                </h2>
+
+                <p class="product-price">₹1,399</p>
+              </div>
+            </article>
+
+            <!-- Product 5 -->
+            <article class="product-card">
+              <a href="#" class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80"
+                  alt="Premium cotton bedsheet"
+                />
+              </a>
+
+              <div class="product-info">
+                <h2>
+                  <a href="#">Premium Cotton Bedsheet</a>
+                </h2>
+
+                <p class="product-price">₹1,799</p>
+              </div>
+            </article>
+
+            <!-- Product 6 -->
+            <article class="product-card">
+              <a href="#" class="product-image">
+                <img
+                  src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=800&q=80"
+                  alt="Minimal beige bedsheet"
+                />
+              </a>
+
+              <div class="product-info">
+                <h2>
+                  <a href="#">Minimal Beige Bedsheet</a>
+                </h2>
+
+                <p class="product-price">₹1,499</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 CasaLoom. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1892 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CasaLoom — Comfort That Feels Like Home</title>
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* =========================================================
+       CASA LOOM
+       DESIGN SYSTEM
+    ========================================================= */
+
+      :root {
+        /* Colors */
+        --cream: #f6f1e8;
+        --ivory: #fbf8f2;
+        --espresso: #2c211b;
+        --brown: #6a5140;
+        --sage: #7c8870;
+        --sage-dark: #58634f;
+        --terracotta: #b8755d;
+        --sand: #d9c9b6;
+        --warm-grey: #a59b90;
+        --white: #ffffff;
+        --border: rgba(44, 33, 27, 0.14);
+
+        /* Typography */
+        --font-display: "Playfair Display", serif;
+        --font-body: "DM Sans", sans-serif;
+
+        /* Layout */
+        --container: 1200px;
+        --gutter: 24px;
+
+        /* Radius */
+        --radius-sm: 4px;
+        --radius-md: 12px;
+        --radius-lg: 24px;
+
+        /* Shadows */
+        --shadow-soft: 0 20px 60px rgba(44, 33, 27, 0.08);
+      }
+
+      /* =========================================================
+       RESET
+    ========================================================= */
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--ivory);
+        color: var(--espresso);
+        font-family: var(--font-body);
+        line-height: 1.5;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        border: 0;
+        background: none;
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .container {
+        width: min(calc(100% - (var(--gutter) * 2)), var(--container));
+
+        margin-inline: auto;
+      }
+
+      /* =========================================================
+       ANNOUNCEMENT BAR
+    ========================================================= */
+
+      .announcement {
+        background: var(--espresso);
+        color: var(--cream);
+
+        min-height: 38px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 11px;
+        font-weight: 500;
+
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      /* =========================================================
+       HEADER
+    ========================================================= */
+
+      .header {
+        position: relative;
+        z-index: 20;
+
+        background: var(--ivory);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .header-inner {
+        min-height: 82px;
+
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+
+        gap: 30px;
+      }
+
+      .logo {
+        font-family: var(--font-display);
+        font-size: 28px;
+        letter-spacing: -0.03em;
+      }
+
+      .logo span {
+        color: var(--terracotta);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .nav a {
+        position: relative;
+        padding-block: 8px;
+      }
+
+      .nav a::after {
+        content: "";
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        width: 0;
+        height: 1px;
+
+        background: var(--espresso);
+
+        transition: width 0.3s ease;
+      }
+
+      .nav a:hover::after {
+        width: 100%;
+      }
+
+      .header-actions {
+        justify-self: end;
+
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .header-action {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        font-size: 12px;
+      }
+
+      .cart-count {
+        width: 20px;
+        height: 20px;
+
+        display: grid;
+        place-items: center;
+
+        border-radius: 50%;
+
+        background: var(--espresso);
+        color: var(--white);
+
+        font-size: 10px;
+      }
+
+      /* =========================================================
+       HERO
+    ========================================================= */
+
+      .hero {
+        min-height: 720px;
+
+        position: relative;
+
+        display: flex;
+        align-items: flex-end;
+
+        overflow: hidden;
+
+        background:
+          linear-gradient(
+            90deg,
+            rgba(32, 24, 19, 0.6),
+            rgba(32, 24, 19, 0.18),
+            rgba(32, 24, 19, 0.04)
+          ),
+          url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2200&q=90")
+            center / cover;
+      }
+
+      .hero-content {
+        width: min(100%, var(--container));
+
+        margin-inline: auto;
+
+        padding: 0 var(--gutter) 100px;
+      }
+
+      .eyebrow {
+        margin-bottom: 18px;
+
+        color: var(--terracotta);
+
+        font-size: 11px;
+        font-weight: 600;
+
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .hero .eyebrow {
+        color: #e7c6b7;
+      }
+
+      .hero-title {
+        max-width: 680px;
+
+        color: var(--white);
+
+        font-family: var(--font-display);
+        font-size: clamp(56px, 7vw, 94px);
+        font-weight: 400;
+
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+      }
+
+      .hero-description {
+        max-width: 480px;
+
+        margin-top: 25px;
+
+        color: rgba(255, 255, 255, 0.86);
+
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+
+        margin-top: 34px;
+      }
+
+      .button {
+        min-height: 50px;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        padding-inline: 28px;
+
+        font-size: 11px;
+        font-weight: 600;
+
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+
+        transition:
+          transform 0.3s ease,
+          background 0.3s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button-primary {
+        background: var(--cream);
+        color: var(--espresso);
+      }
+
+      .button-outline {
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        color: var(--white);
+      }
+
+      /* =========================================================
+       BENEFITS
+    ========================================================= */
+
+      .benefits {
+        border-bottom: 1px solid var(--border);
+        background: var(--cream);
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .benefit {
+        min-height: 130px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+
+        padding: 25px;
+
+        border-right: 1px solid var(--border);
+      }
+
+      .benefit:last-child {
+        border-right: 0;
+      }
+
+      .benefit-icon {
+        width: 38px;
+        height: 38px;
+
+        display: grid;
+        place-items: center;
+
+        border: 1px solid var(--border);
+        border-radius: 50%;
+
+        color: var(--terracotta);
+
+        font-size: 16px;
+      }
+
+      .benefit-title {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+      }
+
+      .benefit-text {
+        margin-top: 3px;
+
+        color: var(--warm-grey);
+
+        font-size: 12px;
+      }
+
+      /* =========================================================
+       SECTION COMMON
+    ========================================================= */
+
+      .section {
+        padding-block: 120px;
+      }
+
+      .section-heading {
+        max-width: 700px;
+        margin-bottom: 50px;
+      }
+
+      .section-heading.center {
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      .section-title {
+        font-family: var(--font-display);
+        font-size: clamp(40px, 5vw, 62px);
+        font-weight: 400;
+
+        line-height: 1.05;
+        letter-spacing: -0.035em;
+      }
+
+      .section-description {
+        max-width: 570px;
+
+        margin-top: 18px;
+
+        color: var(--brown);
+
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .center .section-description {
+        margin-inline: auto;
+      }
+
+      /* =========================================================
+       COLLECTIONS
+    ========================================================= */
+
+      .collections {
+        background: var(--ivory);
+      }
+
+      .collection-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr 1fr;
+
+        gap: 18px;
+      }
+
+      .collection-card {
+        position: relative;
+
+        min-height: 560px;
+
+        overflow: hidden;
+      }
+
+      .collection-card:nth-child(2),
+      .collection-card:nth-child(3) {
+        min-height: 420px;
+      }
+
+      .collection-card img {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        transition: transform 0.7s ease;
+      }
+
+      .collection-card:hover img {
+        transform: scale(1.04);
+      }
+
+      .collection-overlay {
+        position: absolute;
+        inset: 0;
+
+        background: linear-gradient(
+          to top,
+          rgba(32, 24, 19, 0.62),
+          transparent 55%
+        );
+      }
+
+      .collection-content {
+        position: absolute;
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+
+        color: var(--white);
+      }
+
+      .collection-content h3 {
+        font-family: var(--font-display);
+        font-size: 34px;
+        font-weight: 400;
+      }
+
+      .collection-content a {
+        display: inline-block;
+
+        margin-top: 12px;
+
+        font-size: 10px;
+        font-weight: 600;
+
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        padding-bottom: 5px;
+      }
+
+      /* =========================================================
+       PRODUCTS
+    ========================================================= */
+
+      .products {
+        background: var(--cream);
+      }
+
+      .product-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        margin-bottom: 45px;
+      }
+
+      .product-link {
+        font-size: 11px;
+        font-weight: 600;
+
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+
+        border-bottom: 1px solid var(--espresso);
+
+        padding-bottom: 5px;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 20px;
+      }
+
+      .product-image {
+        position: relative;
+
+        overflow: hidden;
+
+        aspect-ratio: 0.82;
+        background: var(--sand);
+      }
+
+      .product-image img {
+        height: 100%;
+        object-fit: cover;
+
+        transition: transform 0.6s ease;
+      }
+
+      .product-card:hover .product-image img {
+        transform: scale(1.04);
+      }
+
+      .product-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+
+        padding: 7px 10px;
+
+        background: var(--cream);
+
+        font-size: 9px;
+        font-weight: 600;
+
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .wishlist {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+
+        width: 36px;
+        height: 36px;
+
+        display: grid;
+        place-items: center;
+
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.88);
+
+        font-size: 17px;
+      }
+
+      .product-info {
+        padding-top: 18px;
+      }
+
+      .product-name {
+        font-family: var(--font-display);
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .product-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-top: 7px;
+
+        color: var(--brown);
+
+        font-size: 12px;
+      }
+
+      .product-price {
+        color: var(--espresso);
+        font-weight: 600;
+      }
+
+      /* =========================================================
+       BRAND STORY
+    ========================================================= */
+
+      .story {
+        background: var(--espresso);
+        color: var(--cream);
+      }
+
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+
+        align-items: center;
+
+        gap: 90px;
+      }
+
+      .story-image {
+        overflow: hidden;
+      }
+
+      .story-image img {
+        aspect-ratio: 0.85;
+        object-fit: cover;
+      }
+
+      .story-content .eyebrow {
+        color: #c58a73;
+      }
+
+      .story-title {
+        max-width: 600px;
+
+        font-family: var(--font-display);
+        font-size: clamp(42px, 5vw, 68px);
+        font-weight: 400;
+
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+      }
+
+      .story-text {
+        max-width: 500px;
+
+        margin-top: 25px;
+
+        color: rgba(246, 241, 232, 0.68);
+
+        font-size: 15px;
+        line-height: 1.9;
+      }
+
+      .story .button {
+        margin-top: 35px;
+        background: var(--cream);
+        color: var(--espresso);
+      }
+
+      /* =========================================================
+       MATERIALS
+    ========================================================= */
+
+      .materials {
+        background: var(--ivory);
+      }
+
+      .materials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 18px;
+      }
+
+      .material-card {
+        padding: 38px 30px;
+
+        border: 1px solid var(--border);
+
+        background: var(--cream);
+      }
+
+      .material-number {
+        color: var(--terracotta);
+
+        font-size: 11px;
+        font-weight: 600;
+
+        letter-spacing: 0.12em;
+      }
+
+      .material-card h3 {
+        margin-top: 45px;
+
+        font-family: var(--font-display);
+        font-size: 29px;
+        font-weight: 400;
+      }
+
+      .material-card p {
+        margin-top: 12px;
+
+        color: var(--brown);
+
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      /* =========================================================
+       SHOP THE LOOK
+    ========================================================= */
+
+      .look {
+        position: relative;
+
+        min-height: 680px;
+
+        display: flex;
+        align-items: center;
+
+        background:
+          linear-gradient(90deg, rgba(31, 24, 19, 0.6), rgba(31, 24, 19, 0.12)),
+          url("https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=2200&q=90")
+            center / cover;
+      }
+
+      .look-content {
+        color: var(--white);
+      }
+
+      .look-content .eyebrow {
+        color: #e3b9a9;
+      }
+
+      .look-title {
+        max-width: 620px;
+
+        font-family: var(--font-display);
+        font-size: clamp(48px, 6vw, 76px);
+        font-weight: 400;
+
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      .look-text {
+        max-width: 460px;
+
+        margin-top: 20px;
+
+        color: rgba(255, 255, 255, 0.78);
+
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      /* =========================================================
+       TESTIMONIALS
+    ========================================================= */
+
+      .testimonials {
+        background: var(--cream);
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 18px;
+      }
+
+      .testimonial {
+        padding: 40px 34px;
+
+        background: var(--ivory);
+        border: 1px solid var(--border);
+      }
+
+      .stars {
+        color: var(--terracotta);
+
+        font-size: 12px;
+        letter-spacing: 4px;
+      }
+
+      .testimonial-quote {
+        margin-top: 30px;
+
+        font-family: var(--font-display);
+        font-size: 24px;
+
+        line-height: 1.4;
+      }
+
+      .testimonial-author {
+        margin-top: 28px;
+
+        color: var(--brown);
+
+        font-size: 11px;
+        font-weight: 600;
+
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      /* =========================================================
+       JOURNAL
+    ========================================================= */
+
+      .journal {
+        background: var(--ivory);
+      }
+
+      .journal-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 20px;
+      }
+
+      .journal-image {
+        aspect-ratio: 1.2;
+
+        overflow: hidden;
+      }
+
+      .journal-image img {
+        height: 100%;
+        object-fit: cover;
+
+        transition: transform 0.6s ease;
+      }
+
+      .journal-card:hover img {
+        transform: scale(1.04);
+      }
+
+      .journal-category {
+        display: block;
+
+        margin-top: 20px;
+
+        color: var(--terracotta);
+
+        font-size: 10px;
+        font-weight: 600;
+
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .journal-title {
+        margin-top: 8px;
+
+        font-family: var(--font-display);
+        font-size: 25px;
+        font-weight: 400;
+      }
+
+      /* =========================================================
+       NEWSLETTER
+    ========================================================= */
+
+      .newsletter {
+        background: var(--sage);
+        color: var(--white);
+
+        padding-block: 90px;
+      }
+
+      .newsletter-inner {
+        max-width: 850px;
+
+        margin-inline: auto;
+
+        text-align: center;
+      }
+
+      .newsletter .eyebrow {
+        color: #d8e0cf;
+      }
+
+      .newsletter-title {
+        font-family: var(--font-display);
+        font-size: clamp(42px, 5vw, 62px);
+        font-weight: 400;
+
+        line-height: 1.05;
+      }
+
+      .newsletter-text {
+        max-width: 530px;
+
+        margin: 18px auto 0;
+
+        color: rgba(255, 255, 255, 0.75);
+
+        font-size: 14px;
+      }
+
+      .newsletter-form {
+        max-width: 560px;
+
+        display: flex;
+
+        margin: 35px auto 0;
+      }
+
+      .newsletter-form input {
+        flex: 1;
+
+        min-height: 52px;
+
+        padding-inline: 18px;
+
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-right: 0;
+
+        outline: none;
+
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+
+        font: inherit;
+      }
+
+      .newsletter-form input::placeholder {
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      .newsletter-form button {
+        min-width: 150px;
+
+        background: var(--cream);
+        color: var(--espresso);
+
+        font-size: 10px;
+        font-weight: 700;
+
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      /* =========================================================
+       FOOTER
+    ========================================================= */
+
+      .footer {
+        background: #211914;
+        color: var(--cream);
+
+        padding-block: 80px 30px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.6fr repeat(3, 1fr);
+
+        gap: 50px;
+      }
+
+      .footer-logo {
+        font-family: var(--font-display);
+        font-size: 30px;
+      }
+
+      .footer-description {
+        max-width: 300px;
+
+        margin-top: 18px;
+
+        color: rgba(246, 241, 232, 0.55);
+
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .footer-heading {
+        margin-bottom: 18px;
+
+        font-size: 10px;
+        font-weight: 600;
+
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+      }
+
+      .footer-links a {
+        color: rgba(246, 241, 232, 0.58);
+
+        font-size: 12px;
+
+        transition: color 0.2s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--cream);
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+
+        margin-top: 70px;
+        padding-top: 22px;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+        color: rgba(246, 241, 232, 0.4);
+
+        font-size: 10px;
+      }
+
+      /* =========================================================
+       RESPONSIVE — TABLET
+    ========================================================= */
+
+      @media (max-width: 900px) {
+        .header-inner {
+          grid-template-columns: auto 1fr auto;
+        }
+
+        .nav {
+          display: none;
+        }
+
+        .header-actions {
+          gap: 12px;
+        }
+
+        .hero {
+          min-height: 620px;
+        }
+
+        .benefits-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .benefit:nth-child(2) {
+          border-right: 0;
+        }
+
+        .benefit:nth-child(-n + 2) {
+          border-bottom: 1px solid var(--border);
+        }
+
+        .collection-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .collection-card:first-child {
+          grid-column: span 2;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+          row-gap: 45px;
+        }
+
+        .story-grid {
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+
+        .story-image {
+          max-width: 650px;
+        }
+
+        .materials-grid,
+        .testimonial-grid,
+        .journal-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .testimonial:last-child,
+        .journal-card:last-child {
+          display: none;
+        }
+
+        .footer-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* =========================================================
+       RESPONSIVE — MOBILE
+    ========================================================= */
+
+      @media (max-width: 600px) {
+        :root {
+          --gutter: 16px;
+        }
+
+        .announcement {
+          min-height: 34px;
+
+          padding-inline: 10px;
+
+          font-size: 9px;
+          letter-spacing: 0.08em;
+        }
+
+        .header-inner {
+          min-height: 70px;
+        }
+
+        .logo {
+          font-size: 24px;
+        }
+
+        .header-action span:not(.cart-count) {
+          display: none;
+        }
+
+        .hero {
+          min-height: 650px;
+
+          background-position: 60% center;
+        }
+
+        .hero-content {
+          padding-bottom: 65px;
+        }
+
+        .hero-title {
+          font-size: clamp(46px, 14vw, 64px);
+        }
+
+        .hero-description {
+          font-size: 14px;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .benefits-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .benefit {
+          min-height: 100px;
+
+          justify-content: flex-start;
+
+          padding-inline: 20px;
+
+          border-right: 0;
+          border-bottom: 1px solid var(--border);
+        }
+
+        .benefit:last-child {
+          border-bottom: 0;
+        }
+
+        .section {
+          padding-block: 80px;
+        }
+
+        .section-heading {
+          margin-bottom: 35px;
+        }
+
+        .collection-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .collection-card:first-child {
+          grid-column: auto;
+        }
+
+        .collection-card,
+        .collection-card:nth-child(2),
+        .collection-card:nth-child(3) {
+          min-height: 430px;
+        }
+
+        .product-header {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 18px;
+        }
+
+        .product-grid {
+          grid-template-columns: 1fr 1fr;
+
+          gap: 25px 12px;
+        }
+
+        .product-name {
+          font-size: 17px;
+        }
+
+        .product-meta {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 3px;
+        }
+
+        .story-title {
+          font-size: 44px;
+        }
+
+        .materials-grid,
+        .testimonial-grid,
+        .journal-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .testimonial:last-child,
+        .journal-card:last-child {
+          display: block;
+        }
+
+        .look {
+          min-height: 600px;
+        }
+
+        .look-title {
+          font-size: 48px;
+        }
+
+        .newsletter {
+          padding-block: 75px;
+        }
+
+        .newsletter-form {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .newsletter-form input {
+          border-right: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .newsletter-form button {
+          min-height: 52px;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 45px 25px;
+        }
+
+        .footer-brand {
+          grid-column: span 2;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =======================================================
+       ANNOUNCEMENT
+  ======================================================== -->
+
+    <div class="announcement">Free shipping on orders above ₹999</div>
+
+    <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+    <header class="header">
+      <div class="container header-inner">
+        <a href="#" class="logo"> Casa<span>Loom</span> </a>
+
+        <nav class="nav">
+          <a href="#">New Arrivals</a>
+          <a href="#">Bedsheets</a>
+          <a href="#">King Size</a>
+          <a href="#">Queen Size</a>
+          <a href="#">Cotton</a>
+          <a href="#">Sale</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#" class="header-action"> Search </a>
+
+          <a href="#" class="header-action"> Account </a>
+
+          <a href="#" class="header-action">
+            Cart
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">The New Collection</p>
+
+          <h1 class="hero-title">Comfort that feels like home.</h1>
+
+          <p class="hero-description">
+            Thoughtfully designed bedding made to bring softness, character and
+            quiet luxury into your everyday space.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#" class="button button-primary"> Shop Collection </a>
+
+            <a href="#" class="button button-outline"> Explore Our Story </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+         BENEFITS
+    ====================================================== -->
+
+      <section class="benefits">
+        <div class="container benefits-grid">
+          <div class="benefit">
+            <div class="benefit-icon">✦</div>
+
+            <div>
+              <div class="benefit-title">Premium Fabric</div>
+
+              <div class="benefit-text">Soft. Breathable. Thoughtful.</div>
+            </div>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit-icon">✓</div>
+
+            <div>
+              <div class="benefit-title">Quality Checked</div>
+
+              <div class="benefit-text">Made for everyday comfort.</div>
+            </div>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit-icon">→</div>
+
+            <div>
+              <div class="benefit-title">Fast Delivery</div>
+
+              <div class="benefit-text">Delivered across India.</div>
+            </div>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit-icon">↺</div>
+
+            <div>
+              <div class="benefit-title">Easy Returns</div>
+
+              <div class="benefit-text">Shop with confidence.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+         COLLECTIONS
+    ====================================================== -->
+
+      <section class="section collections">
+        <div class="container">
+          <div class="section-heading center">
+            <p class="eyebrow">Discover CasaLoom</p>
+
+            <h2 class="section-title">Made for the way you live.</h2>
+
+            <p class="section-description">
+              From breathable everyday cotton to expressive prints and elevated
+              textures, find something that feels unmistakably yours.
+            </p>
+          </div>
+
+          <div class="collection-grid">
+            <article class="collection-card">
+              <img
+                src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=85"
+                alt="Pure cotton bedding"
+              />
+
+              <div class="collection-overlay"></div>
+
+              <div class="collection-content">
+                <h3>Pure Cotton</h3>
+
+                <a href="#"> Explore Collection → </a>
+              </div>
+            </article>
+
+            <article class="collection-card">
+              <img
+                src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1000&q=85"
+                alt="Printed bedsheets"
+              />
+
+              <div class="collection-overlay"></div>
+
+              <div class="collection-content">
+                <h3>Printed Stories</h3>
+
+                <a href="#"> Explore Collection → </a>
+              </div>
+            </article>
+
+            <article class="collection-card">
+              <img
+                src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=85"
+                alt="Luxury bedding"
+              />
+
+              <div class="collection-overlay"></div>
+
+              <div class="collection-content">
+                <h3>Quiet Luxury</h3>
+
+                <a href="#"> Explore Collection → </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+         BESTSELLERS
+    ====================================================== -->
+
+      <section class="section products">
+        <div class="container">
+          <div class="product-header">
+            <div class="section-heading">
+              <p class="eyebrow">The CasaLoom Edit</p>
+
+              <h2 class="section-title">Bestsellers</h2>
+            </div>
+
+            <a href="#" class="product-link"> View All Products → </a>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="product-image">
+                <span class="product-badge"> Bestseller </span>
+
+                <button class="wishlist">♡</button>
+
+                <img
+                  src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?auto=format&fit=crop&w=900&q=85"
+                  alt="Sage cotton bedsheet"
+                />
+              </div>
+
+              <div class="product-info">
+                <h3 class="product-name">Sage Garden</h3>
+
+                <div class="product-meta">
+                  <span> 100% Cotton · King </span>
+
+                  <span class="product-price"> ₹2,499 </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-image">
+                <button class="wishlist">♡</button>
+
+                <img
+                  src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=900&q=85"
+                  alt="Neutral luxury bedsheet"
+                />
+              </div>
+
+              <div class="product-info">
+                <h3 class="product-name">Sandstone</h3>
+
+                <div class="product-meta">
+                  <span> Premium Cotton · King </span>
+
+                  <span class="product-price"> ₹2,799 </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-image">
+                <span class="product-badge"> New </span>
+
+                <button class="wishlist">♡</button>
+
+                <img
+                  src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85"
+                  alt="Terracotta bedding"
+                />
+              </div>
+
+              <div class="product-info">
+                <h3 class="product-name">Terra Lines</h3>
+
+                <div class="product-meta">
+                  <span> Printed Cotton · Queen </span>
+
+                  <span class="product-price"> ₹2,299 </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-image">
+                <button class="wishlist">♡</button>
+
+                <img
+                  src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=85"
+                  alt="Warm beige luxury bedding"
+                />
+              </div>
+
+              <div class="product-info">
+                <h3 class="product-name">Soft Sand</h3>
+
+                <div class="product-meta">
+                  <span> Luxe Cotton · King </span>
+
+                  <span class="product-price"> ₹2,999 </span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+         STORY
+    ====================================================== -->
+
+      <section class="section story">
+        <div class="container story-grid">
+          <div class="story-image">
+            <img
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85"
+              alt="CasaLoom bedroom"
+            />
+          </div>
+
+          <div class="story-content">
+            <p class="eyebrow">The CasaLoom Story</p>
+
+            <h2 class="story-title">Beautiful bedding. Thoughtfully made.</h2>
+
+            <p class="story-text">
+              We believe your bedroom should feel like a place you want to
+              return to. CasaLoom brings together considered design, comfortable
+              fabrics and timeless colours to create bedding that feels as good
+              as it looks.
+            </p>
+
+            <a href="#" class="button"> Discover Our Story </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+         MATERIALS
+    ====================================================== -->
+
+      <section class="section materials">
+        <div class="container">
+          <div class="section-heading center">
+            <p class="eyebrow">Why CasaLoom</p>
+
+            <h2 class="section-title">The details matter.</h2>
+
+            <p class="section-description">
+              Every piece is designed around the things that make everyday
+              bedding worth coming home to.
+            </p>
+          </div>
+
+          <div class="materials-grid">
+            <article class="material-card">
+              <span class="material-number"> 01 </span>
+
+              <h3>Breathable Fabrics</h3>
+
+              <p>
+                Soft, lightweight materials selected to keep you comfortable
+                through warm and cool nights.
+              </p>
+            </article>
+
+            <article class="material-card">
+              <span class="material-number"> 02 </span>
+
+              <h3>Considered Design</h3>
+
+              <p>
+                Calm colours, timeless patterns and details that work
+                beautifully with modern Indian homes.
+              </p>
+            </article>
+
+            <article class="material-card">
+              <span class="material-number"> 03 </span>
+
+              <h3>Made to Last</h3>
+
+              <p>
+                Quality construction designed to stay comfortable, beautiful and
+                dependable wash after wash.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+         SHOP THE LOOK
+    ====================================================== -->
+
+      <section class="look">
+        <div class="container">
+          <div class="look-content">
+            <p class="eyebrow">Shop The Look</p>
+
+            <h2 class="look-title">Turn your bedroom into a retreat.</h2>
+
+            <p class="look-text">
+              Discover complete bedding looks designed to work beautifully
+              together — from sheets and cushions to the smallest finishing
+              detail.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#" class="button button-primary"> Shop The Look </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+         TESTIMONIALS
+    ====================================================== -->
+
+      <section class="section testimonials">
+        <div class="container">
+          <div class="section-heading center">
+            <p class="eyebrow">Loved At Home</p>
+
+            <h2 class="section-title">What our customers say.</h2>
+          </div>
+
+          <div class="testimonial-grid">
+            <article class="testimonial">
+              <div class="stars">★★★★★</div>
+
+              <p class="testimonial-quote">
+                “The fabric feels even better than it looks. My bedroom
+                instantly felt warmer and more put together.”
+              </p>
+
+              <p class="testimonial-author">Priya · Mumbai</p>
+            </article>
+
+            <article class="testimonial">
+              <div class="stars">★★★★★</div>
+
+              <p class="testimonial-quote">
+                “Beautiful print, incredibly soft and the quality feels much
+                more premium than I expected.”
+              </p>
+
+              <p class="testimonial-author">Ananya · Delhi</p>
+            </article>
+
+            <article class="testimonial">
+              <div class="stars">★★★★★</div>
+
+              <p class="testimonial-quote">
+                “Exactly the calm, minimal look I wanted for our new bedroom.
+                Will definitely order again.”
+              </p>
+
+              <p class="testimonial-author">Rohan · Bengaluru</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+         JOURNAL
+    ====================================================== -->
+
+      <section class="section journal">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">From The Journal</p>
+
+            <h2 class="section-title">Ideas for better bedrooms.</h2>
+          </div>
+
+          <div class="journal-grid">
+            <article class="journal-card">
+              <div class="journal-image">
+                <img
+                  src="https://images.unsplash.com/photo-1615874694520-474822394e73?auto=format&fit=crop&w=1000&q=85"
+                  alt="Bedroom styling"
+                />
+              </div>
+
+              <span class="journal-category"> Bedroom Styling </span>
+
+              <h3 class="journal-title">
+                How to create a calm bedroom palette.
+              </h3>
+            </article>
+
+            <article class="journal-card">
+              <div class="journal-image">
+                <img
+                  src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=85"
+                  alt="Bedsheet styling"
+                />
+              </div>
+
+              <span class="journal-category"> Fabric Guide </span>
+
+              <h3 class="journal-title">
+                Cotton, linen or blends: what should you choose?
+              </h3>
+            </article>
+
+            <article class="journal-card">
+              <div class="journal-image">
+                <img
+                  src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+                  alt="Bedroom inspiration"
+                />
+              </div>
+
+              <span class="journal-category"> Inspiration </span>
+
+              <h3 class="journal-title">
+                Small changes that transform your bedroom.
+              </h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+         NEWSLETTER
+    ====================================================== -->
+
+      <section class="newsletter">
+        <div class="container newsletter-inner">
+          <p class="eyebrow">Stay In The Loop</p>
+
+          <h2 class="newsletter-title">Make room for beautiful things.</h2>
+
+          <p class="newsletter-text">
+            Join the CasaLoom journal for new collections, bedroom inspiration
+            and occasional offers.
+          </p>
+
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" />
+
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">CasaLoom</div>
+
+            <p class="footer-description">
+              Thoughtfully designed bedding for bedrooms that feel like home.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="footer-heading">Shop</h3>
+
+            <div class="footer-links">
+              <a href="#">New Arrivals</a>
+              <a href="#">Bedsheets</a>
+              <a href="#">King Size</a>
+              <a href="#">Queen Size</a>
+              <a href="#">Sale</a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="footer-heading">About</h3>
+
+            <div class="footer-links">
+              <a href="#">Our Story</a>
+              <a href="#">Journal</a>
+              <a href="#">Contact</a>
+              <a href="#">FAQs</a>
+              <a href="#">Shipping</a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="footer-heading">Help</h3>
+
+            <div class="footer-links">
+              <a href="#">Returns</a>
+              <a href="#">Care Guide</a>
+              <a href="#">Privacy</a>
+              <a href="#">Terms</a>
+              <a href="#">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span> © 2026 CasaLoom. All rights reserved. </span>
+
+          <span> Designed for better nights. </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

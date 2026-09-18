@@ -62,19 +62,22 @@
       const maxCount = 10;
       function updateCounter() {
         counterNumber.textContent = count;
-        plusBtn.disabled = count === maxCount;
-        minusBtn.disabled = count === 0;
+        plusBtn.disabled = count >= maxCount;
+        minusBtn.disabled = count <= 0;
       }
       plusBtn.addEventListener("click", function () {
         if (count < maxCount) {
-          count = count + 1;
+          count++;
           updateCounter();
         }
       });
       minusBtn.addEventListener("click", function () {
-        count = count - 1;
-        updateCounter();
+        if (count > 0) {
+          count = count - 1;
+          updateCounter();
+        }
       });
+      updateCounter();
     </script>
   </body>
 </html>

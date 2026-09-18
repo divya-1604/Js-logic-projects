@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CasaLoom — Pure Cotton</title>
+    <style>
+      /* =========================
+   RESET
+========================= */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        color: #222;
+        background: #fff;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      /* =========================
+   GLOBAL
+========================= */
+
+      .container {
+        width: min(1200px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      /* =========================
+   HEADER
+========================= */
+
+      .site-header {
+        border-bottom: 1px solid #e8e5df;
+        background: #fff;
+      }
+
+      .header-inner {
+        min-height: 80px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 30px;
+      }
+
+      .logo {
+        font-size: 25px;
+        font-weight: 600;
+      }
+
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .main-nav a {
+        font-size: 14px;
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .header-actions a {
+        font-size: 14px;
+      }
+
+      /* =========================
+   COLLECTION BANNER
+========================= */
+
+      .collection-banner {
+        position: relative;
+
+        min-height: 480px;
+
+        display: flex;
+        align-items: center;
+
+        overflow: hidden;
+
+        background: #333;
+      }
+
+      .collection-banner__image {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+      }
+
+      .collection-banner__overlay {
+        position: absolute;
+        inset: 0;
+
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.65),
+          rgba(0, 0, 0, 0.2)
+        );
+      }
+
+      .collection-banner__content {
+        position: relative;
+        z-index: 1;
+
+        color: #fff;
+      }
+
+      .collection-banner__eyebrow {
+        margin-bottom: 18px;
+
+        font-size: 12px;
+        font-weight: 600;
+
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        opacity: 0.85;
+      }
+
+      .collection-banner h1 {
+        max-width: 700px;
+
+        margin-bottom: 20px;
+
+        font-size: clamp(48px, 7vw, 82px);
+        font-weight: 500;
+
+        line-height: 0.98;
+        letter-spacing: -3px;
+      }
+
+      .collection-banner__description {
+        max-width: 520px;
+
+        font-size: 16px;
+        line-height: 1.7;
+
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      /* =========================
+   COLLECTION META
+========================= */
+
+      .collection-meta {
+        border-bottom: 1px solid #e8e5df;
+      }
+
+      .collection-meta__inner {
+        min-height: 65px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .collection-meta p {
+        font-size: 13px;
+        color: #777;
+      }
+
+      /* =========================
+   TOOLBAR
+========================= */
+
+      .collection-toolbar {
+        border-bottom: 1px solid #e8e5df;
+      }
+
+      .collection-toolbar__inner {
+        min-height: 65px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .filter-button {
+        padding: 0;
+
+        border: 0;
+        background: transparent;
+
+        font: inherit;
+        font-size: 14px;
+
+        cursor: pointer;
+      }
+
+      .sort {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .sort label {
+        font-size: 13px;
+        color: #777;
+      }
+
+      .sort select {
+        padding: 8px 30px 8px 10px;
+
+        border: 1px solid #ddd;
+
+        background: #fff;
+
+        font-size: 13px;
+      }
+
+      /* =========================
+   PRODUCT SECTION
+========================= */
+
+      .product-section {
+        padding: 55px 0 100px;
+      }
+
+      .product-grid {
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 45px 20px;
+      }
+
+      /* =========================
+   PRODUCT CARD
+========================= */
+
+      .product-card__image {
+        position: relative;
+
+        display: block;
+
+        aspect-ratio: 1 / 1;
+
+        overflow: hidden;
+
+        background: #f3f1ed;
+      }
+
+      .product-card__image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        transition: transform 0.5s ease;
+      }
+
+      .product-card:hover .product-card__image img {
+        transform: scale(1.04);
+      }
+
+      /* =========================
+   BADGE
+========================= */
+
+      .product-card__badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+
+        z-index: 2;
+
+        padding: 7px 10px;
+
+        background: #fff;
+
+        font-size: 11px;
+        font-weight: 600;
+
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* =========================
+   WISHLIST
+========================= */
+
+      .wishlist {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+
+        z-index: 3;
+
+        width: 38px;
+        height: 38px;
+
+        border: 0;
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.92);
+
+        font-size: 20px;
+
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* =========================
+   PRODUCT INFO
+========================= */
+
+      .product-card__info {
+        padding-top: 15px;
+      }
+
+      .product-card__info h2 {
+        margin-bottom: 7px;
+
+        font-size: 15px;
+        font-weight: 500;
+
+        line-height: 1.4;
+      }
+
+      .product-card__price {
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* =========================
+   FOOTER
+========================= */
+
+      .site-footer {
+        padding: 40px 0;
+
+        border-top: 1px solid #e8e5df;
+
+        color: #777;
+
+        font-size: 13px;
+      }
+
+      /* =========================
+   TABLET
+========================= */
+
+      @media (max-width: 900px) {
+        .main-nav {
+          display: none;
+        }
+
+        .collection-banner {
+          min-height: 420px;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* =========================
+   MOBILE
+========================= */
+
+      @media (max-width: 600px) {
+        .container {
+          width: min(100% - 32px, 1200px);
+        }
+
+        .header-inner {
+          min-height: 65px;
+        }
+
+        .header-actions a:first-child {
+          display: none;
+        }
+
+        .collection-banner {
+          min-height: 430px;
+        }
+
+        .collection-banner h1 {
+          font-size: 48px;
+          letter-spacing: -2px;
+        }
+
+        .collection-banner__description {
+          max-width: 400px;
+          font-size: 14px;
+        }
+
+        .collection-meta__inner {
+          min-height: 55px;
+        }
+
+        .collection-meta p:last-child {
+          display: none;
+        }
+
+        .product-section {
+          padding: 35px 0 70px;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 35px 12px;
+        }
+
+        .product-card__info {
+          padding-top: 10px;
+        }
+
+        .product-card__info h2 {
+          font-size: 14px;
+        }
+
+        .product-card__price {
+          font-size: 13px;
+        }
+
+        .product-card__badge {
+          top: 8px;
+          left: 8px;
+          padding: 5px 7px;
+          font-size: 9px;
+        }
+
+        .wishlist {
+          top: 8px;
+          right: 8px;
+
+          width: 32px;
+          height: 32px;
+
+          font-size: 17px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="logo"> CasaLoom </a>
+
+        <nav class="main-nav">
+          <a href="#">New Arrivals</a>
+          <a href="#">Bedsheets</a>
+          <a href="#">King Size</a>
+          <a href="#">Queen Size</a>
+          <a href="#">Cotton</a>
+          <a href="#">Sale</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#">Search</a>
+          <a href="#">Account</a>
+          <a href="#">Cart (0)</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- =========================
+             COLLECTION BANNER
+        ========================== -->
+
+      <section class="collection-banner">
+        <img
+          class="collection-banner__image"
+          src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1800&q=85"
+          alt="Pure Cotton Collection"
+        />
+
+        <div class="collection-banner__overlay"></div>
+
+        <div class="container collection-banner__content">
+          <p class="collection-banner__eyebrow">CASA COLLECTION</p>
+
+          <h1>Pure Cotton</h1>
+
+          <p class="collection-banner__description">
+            Naturally soft, breathable and beautifully crafted bedsheets
+            designed for everyday comfort.
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================
+             COLLECTION META
+        ========================== -->
+
+      <section class="collection-meta">
+        <div class="container collection-meta__inner">
+          <p>24 Products</p>
+
+          <p>Pure Cotton Collection</p>
+        </div>
+      </section>
+
+      <!-- =========================
+             FILTER / SORT BAR
+        ========================== -->
+
+      <section class="collection-toolbar">
+        <div class="container collection-toolbar__inner">
+          <button class="filter-button">Filters</button>
+
+          <div class="sort">
+            <label for="sort"> Sort by </label>
+
+            <select id="sort">
+              <option>Featured</option>
+
+              <option>Best Selling</option>
+
+              <option>Price: Low to High</option>
+
+              <option>Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+             PRODUCTS
+        ========================== -->
+
+      <section class="product-section">
+        <div class="container">
+          <div class="product-grid">
+            <!-- PRODUCT 1 -->
+
+            <article class="product-card">
+              <a href="#" class="product-card__image">
+                <span class="product-card__badge"> Bestseller </span>
+
+                <button class="wishlist" aria-label="Add to wishlist">♡</button>
+
+                <img
+                  src="https://images.unsplash.com/photo-1583845112203-454c7b0c2b31?auto=format&fit=crop&w=900&q=85"
+                  alt="Floral Cotton Bedsheet"
+                />
+              </a>
+
+              <div class="product-card__info">
+                <h2>
+                  <a href="#"> Floral Cotton Bedsheet </a>
+                </h2>
+
+                <p class="product-card__price">₹1,299</p>
+              </div>
+            </article>
+
+            <!-- PRODUCT 2 -->
+
+            <article class="product-card">
+              <a href="#" class="product-card__image">
+                <button class="wishlist" aria-label="Add to wishlist">♡</button>
+
+                <img
+                  src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=85"
+                  alt="Blue Striped Bedsheet"
+                />
+              </a>
+
+              <div class="product-card__info">
+                <h2>
+                  <a href="#"> Blue Striped Bedsheet </a>
+                </h2>
+
+                <p class="product-card__price">₹1,499</p>
+              </div>
+            </article>
+
+            <!-- PRODUCT 3 -->
+
+            <article class="product-card">
+              <a href="#" class="product-card__image">
+                <button class="wishlist" aria-label="Add to wishlist">♡</button>
+
+                <img
+                  src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?auto=format&fit=crop&w=900&q=85"
+                  alt="Beige Cotton Bedsheet"
+                />
+              </a>
+
+              <div class="product-card__info">
+                <h2>
+                  <a href="#"> Beige Cotton Bedsheet </a>
+                </h2>
+
+                <p class="product-card__price">₹1,599</p>
+              </div>
+            </article>
+
+            <!-- PRODUCT 4 -->
+
+            <article class="product-card">
+              <a href="#" class="product-card__image">
+                <button class="wishlist" aria-label="Add to wishlist">♡</button>
+
+                <img
+                  src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85"
+                  alt="Premium Cotton Bedsheet"
+                />
+              </a>
+
+              <div class="product-card__info">
+                <h2>
+                  <a href="#"> Premium Cotton Bedsheet </a>
+                </h2>
+
+                <p class="product-card__price">₹1,799</p>
+              </div>
+            </article>
+
+            <!-- PRODUCT 5 -->
+
+            <article class="product-card">
+              <a href="#" class="product-card__image">
+                <button class="wishlist" aria-label="Add to wishlist">♡</button>
+
+                <img
+                  src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=85"
+                  alt="Minimal Beige Bedsheet"
+                />
+              </a>
+
+              <div class="product-card__info">
+                <h2>
+                  <a href="#"> Minimal Beige Bedsheet </a>
+                </h2>
+
+                <p class="product-card__price">₹1,499</p>
+              </div>
+            </article>
+
+            <!-- PRODUCT 6 -->
+
+            <article class="product-card">
+              <a href="#" class="product-card__image">
+                <button class="wishlist" aria-label="Add to wishlist">♡</button>
+
+                <img
+                  src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=85"
+                  alt="Luxury Printed Bedsheet"
+                />
+              </a>
+
+              <div class="product-card__info">
+                <h2>
+                  <a href="#"> Luxury Printed Bedsheet </a>
+                </h2>
+
+                <p class="product-card__price">₹1,999</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 CasaLoom. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

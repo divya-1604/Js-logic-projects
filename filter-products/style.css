@@ -1,0 +1,389 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f7f7;
+  color: #171717;
+}
+
+/* =========================================
+   COLLECTION
+========================================= */
+
+.collection {
+  width: min(1400px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.collection__header {
+  margin-bottom: 50px;
+}
+
+.collection__header h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.collection__header p {
+  color: #777;
+  font-size: 15px;
+}
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.collection__layout {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* =========================================
+   FILTER SIDEBAR
+========================================= */
+
+.filters {
+  position: sticky;
+  top: 30px;
+
+  background: #fff;
+  padding: 25px;
+
+  border: 1px solid #e5e5e5;
+}
+
+.filters__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e5e5e5;
+
+  margin-bottom: 25px;
+}
+
+.filters__header h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#clear-filters {
+  border: 0;
+  background: transparent;
+
+  font-size: 12px;
+  text-decoration: underline;
+
+  cursor: pointer;
+  color: #555;
+}
+
+#clear-filters:hover {
+  color: #000;
+}
+
+/* =========================================
+   FILTER GROUP
+========================================= */
+
+.filter-group {
+  margin-bottom: 35px;
+}
+
+.filter-group h3 {
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 15px;
+}
+
+/* =========================================
+   CHECKBOX OPTIONS
+========================================= */
+
+.filter-option {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.filter-option input {
+  width: 16px;
+  height: 16px;
+
+  cursor: pointer;
+}
+
+/* =========================================
+   PRICE INPUTS
+========================================= */
+
+.price-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.price-inputs input {
+  width: 100%;
+
+  padding: 10px;
+
+  border: 1px solid #d5d5d5;
+
+  outline: none;
+
+  font-size: 13px;
+}
+
+.price-inputs input:focus {
+  border-color: #111;
+}
+
+/* =========================================
+   PRODUCTS SECTION
+========================================= */
+
+.products-section {
+  min-width: 0;
+}
+
+.products-header {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-bottom: 20px;
+}
+
+.products-header p {
+  color: #777;
+  font-size: 14px;
+}
+
+#product-count {
+  color: #111;
+  font-weight: 600;
+}
+
+/* =========================================
+   PRODUCT GRID
+========================================= */
+
+.products-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 30px;
+}
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
+
+.product-card {
+  background: #fff;
+
+  border: 1px solid #e5e5e5;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================================
+   PRODUCT IMAGE
+========================================= */
+
+.product-card__image {
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eeeeee;
+
+  color: #999;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   PRODUCT CONTENT
+========================================= */
+
+.product-card__content {
+  padding: 18px;
+}
+
+.product-card__content h2 {
+  font-size: 16px;
+  font-weight: 500;
+
+  margin-bottom: 8px;
+}
+
+.product-card__color {
+  color: #777;
+
+  font-size: 13px;
+
+  margin-bottom: 5px;
+}
+
+.product-card__sizes {
+  color: #999;
+
+  font-size: 12px;
+
+  margin-bottom: 12px;
+}
+
+.product-card__price {
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   SOLD OUT
+========================================= */
+
+.product-card__sold-out {
+  display: inline-block;
+
+  margin-top: 12px;
+
+  padding: 5px 8px;
+
+  background: #111;
+  color: #fff;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================================
+   NO RESULTS
+========================================= */
+
+.no-results {
+  padding: 80px 20px;
+
+  text-align: center;
+
+  background: #fff;
+
+  border: 1px solid #e5e5e5;
+}
+
+.no-results h2 {
+  font-size: 20px;
+
+  margin-bottom: 8px;
+}
+
+.no-results p {
+  color: #777;
+
+  font-size: 14px;
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media screen and (max-width: 1000px) {
+  .collection__layout {
+    grid-template-columns: 200px 1fr;
+    gap: 25px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media screen and (max-width: 700px) {
+  .collection {
+    width: min(100% - 30px, 600px);
+
+    padding: 35px 0;
+  }
+
+  .collection__header {
+    margin-bottom: 30px;
+  }
+
+  .collection__header h1 {
+    font-size: 30px;
+  }
+
+  .collection__layout {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .filters {
+    position: static;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+  }
+
+  .product-card__content {
+    padding: 14px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media screen and (max-width: 450px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
