@@ -1,0 +1,1100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garg Traders - Unleash Your True Beauty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      property="og:image"
+      content="https://bolt.new/static/og_default.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://bolt.new/static/og_default.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+      <div class="announcement-track">
+        <span>FREE SHIPPING ON ORDERS OVER Rs.5000/-</span>
+        <span>CALL 18008899590 FOR SUPPORT (11AM - 7PM)</span>
+        <span>NEW ARRIVALS EVERY WEEK - SHOP NOW</span>
+        <span>UNLEASH YOUR TRUE BEAUTY AT GARG TRADERS</span>
+        <span>FREE SHIPPING ON ORDERS OVER Rs.5000/-</span>
+        <span>CALL 18008899590 FOR SUPPORT (11AM - 7PM)</span>
+        <span>NEW ARRIVALS EVERY WEEK - SHOP NOW</span>
+        <span>UNLEASH YOUR TRUE BEAUTY AT GARG TRADERS</span>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="header-top">
+        <a href="#" class="logo">Garg<span>Traders</span></a>
+        <div class="search-bar">
+          <input
+            type="text"
+            placeholder="Search our store..."
+            id="searchInput"
+          />
+          <button id="searchBtn" aria-label="Search">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </button>
+        </div>
+        <div class="header-actions">
+          <button class="header-action-btn" aria-label="Account">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>Account</span>
+          </button>
+          <button
+            class="header-action-btn cart-count"
+            id="cartBtn"
+            aria-label="Cart"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="8" cy="21" r="1" />
+              <circle cx="19" cy="21" r="1" />
+              <path
+                d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+              />
+            </svg>
+            <span class="cart-badge" id="cartBadge">0</span>
+            <span>Cart</span>
+          </button>
+          <button
+            class="mobile-menu-toggle"
+            id="mobileMenuToggle"
+            aria-label="Menu"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="4" y1="6" x2="20" y2="6" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="18" x2="20" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list" id="navList">
+          <li><a href="#" data-nav="Home">Home</a></li>
+          <li><a href="#" data-nav="Makeup">Makeup</a></li>
+          <li><a href="#" data-nav="Skincare">Skincare</a></li>
+          <li><a href="#" data-nav="Hair Care">Hair Care</a></li>
+          <li><a href="#" data-nav="Perfume">Perfume</a></li>
+          <li><a href="#" data-nav="Tools">Tools</a></li>
+          <li><a href="#" data-nav="Brands">Brands</a></li>
+          <li><a href="#" data-nav="Contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider" id="heroSlider">
+      <div class="hero-slide active" data-index="0">
+        <img
+          src="https://images.pexels.com/photos/3552894/pexels-photo-3552894.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          alt="Unleash Your True Beauty"
+          loading="eager"
+        />
+        <div class="hero-slide-overlay">
+          <div class="hero-content">
+            <h1>Unleash Your True Beauty</h1>
+            <p>
+              Premium beauty products from world-class brands, delivered to your
+              door.
+            </p>
+            <a href="#categories" class="hero-btn">Shop Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" data-index="1">
+        <img
+          src="https://images.pexels.com/photos/2535913/pexels-photo-2535913.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          alt="New Arrivals Every Week"
+          loading="lazy"
+        />
+        <div class="hero-slide-overlay">
+          <div class="hero-content">
+            <h1>New Arrivals Every Week</h1>
+            <p>
+              Discover the latest in makeup, skincare, and fragrance
+              collections.
+            </p>
+            <a href="#categories" class="hero-btn">Explore Collection</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" data-index="2">
+        <img
+          src="https://images.pexels.com/photos/1571585/beauty-fashion-background-shop-1571585.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          alt="Shop by Top Brands"
+          loading="lazy"
+        />
+        <div class="hero-slide-overlay">
+          <div class="hero-content">
+            <h1>Shop by Top Brands</h1>
+            <p>From MAC to Dior, we carry all your favorite beauty brands.</p>
+            <a href="#categories" class="hero-btn">Browse Brands</a>
+          </div>
+        </div>
+      </div>
+      <button
+        class="slider-arrow prev"
+        id="sliderPrev"
+        aria-label="Previous slide"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+      <button class="slider-arrow next" id="sliderNext" aria-label="Next slide">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+      <div class="slider-dots" id="sliderDots">
+        <button
+          class="slider-dot active"
+          data-dot="0"
+          aria-label="Go to slide 1"
+        ></button>
+        <button
+          class="slider-dot"
+          data-dot="1"
+          aria-label="Go to slide 2"
+        ></button>
+        <button
+          class="slider-dot"
+          data-dot="2"
+          aria-label="Go to slide 3"
+        ></button>
+      </div>
+    </section>
+
+    <!-- Shop by Categories -->
+    <section class="section reveal" id="categories">
+      <div class="section-header">
+        <h2>Shop by Categories</h2>
+        <p>Find everything you need for your beauty routine</p>
+        <div class="section-title-line"></div>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card" data-category="Hair Styling Tools">
+          <img
+            src="https://images.pexels.com/photos/13809242/pexels-photo-13809242.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            alt="Hair Styling Tools"
+            loading="lazy"
+          />
+          <h3>Hair Styling Tools</h3>
+        </div>
+        <div class="category-card" data-category="Airbrush Compressor">
+          <img
+            src="https://images.pexels.com/photos/12969358/pexels-photo-12969358.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            alt="Airbrush Compressor"
+            loading="lazy"
+          />
+          <h3>Airbrush Compressor</h3>
+        </div>
+        <div class="category-card" data-category="Face Skin Tools">
+          <img
+            src="https://images.pexels.com/photos/7691165/pexels-photo-7691165.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            alt="Face Skin Tools"
+            loading="lazy"
+          />
+          <h3>Face Skin Tools</h3>
+        </div>
+        <div class="category-card" data-category="Hair Brushes">
+          <img
+            src="https://images.pexels.com/photos/9230397/pexels-photo-9230397.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            alt="Hair Brushes"
+            loading="lazy"
+          />
+          <h3>Hair Brushes</h3>
+        </div>
+        <div class="category-card" data-category="Bath & Body">
+          <img
+            src="https://images.pexels.com/photos/6936982/pexels-photo-6936982.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            alt="Bath & Body"
+            loading="lazy"
+          />
+          <h3>Bath &amp; Body</h3>
+        </div>
+        <div class="category-card" data-category="Perfume">
+          <img
+            src="https://images.pexels.com/photos/19644211/pexels-photo-19644211.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            alt="Perfume"
+            loading="lazy"
+          />
+          <h3>Perfume</h3>
+        </div>
+        <div class="category-card" data-category="Hair Care">
+          <img
+            src="https://images.pexels.com/photos/7020255/pexels-photo-7020255.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            alt="Hair Care"
+            loading="lazy"
+          />
+          <h3>Hair Care</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-section">
+      <div class="section reveal">
+        <div class="section-header">
+          <h2>Have a Look at Our Products</h2>
+          <p>Featured products handpicked for you</p>
+          <div class="section-title-line"></div>
+        </div>
+        <div class="featured-products">
+          <div class="product-card" data-product-index="0">
+            <div class="product-card-image">
+              <img
+                src="https://images.pexels.com/photos/12538690/pexels-photo-12538690.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                alt="Pilgrim Keratin & Amazonian Patua Smoothening Conditioner (200ml)"
+                loading="lazy"
+              />
+              <div class="product-card-overlay">
+                <button
+                  class="add-to-cart-btn"
+                  data-product-index="0"
+                  aria-label="Add to cart"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="8" cy="21" r="1" />
+                    <circle cx="19" cy="21" r="1" />
+                    <path
+                      d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                    />
+                  </svg>
+                </button>
+                <button class="quick-view-btn" aria-label="Quick view">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <h3>
+                Pilgrim Keratin &amp; Amazonian Patua Smoothening Conditioner
+                (200ml)
+              </h3>
+              <p class="price">Rs. 695.00</p>
+            </div>
+          </div>
+          <div class="product-card" data-product-index="1">
+            <div class="product-card-image">
+              <img
+                src="https://images.pexels.com/photos/1327689/pexels-photo-1327689.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                alt="Wella Professionals Koleston Perfect Medium Blonde Brown (7/7) [60g]"
+                loading="lazy"
+              />
+              <div class="product-card-overlay">
+                <button
+                  class="add-to-cart-btn"
+                  data-product-index="1"
+                  aria-label="Add to cart"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="8" cy="21" r="1" />
+                    <circle cx="19" cy="21" r="1" />
+                    <path
+                      d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                    />
+                  </svg>
+                </button>
+                <button class="quick-view-btn" aria-label="Quick view">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <h3>
+                Wella Professionals Koleston Perfect Medium Blonde Brown (7/7)
+                [60g]
+              </h3>
+              <p class="price">Rs. 1,250.00</p>
+            </div>
+          </div>
+          <div class="product-card" data-product-index="2">
+            <div class="product-card-image">
+              <img
+                src="https://images.pexels.com/photos/11935634/pexels-photo-11935634.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                alt="Pilgrim Korean Rice Water & Collagen Damage Repair Conditioner (200ml)"
+                loading="lazy"
+              />
+              <div class="product-card-overlay">
+                <button
+                  class="add-to-cart-btn"
+                  data-product-index="2"
+                  aria-label="Add to cart"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="8" cy="21" r="1" />
+                    <circle cx="19" cy="21" r="1" />
+                    <path
+                      d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                    />
+                  </svg>
+                </button>
+                <button class="quick-view-btn" aria-label="Quick view">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <h3>
+                Pilgrim Korean Rice Water &amp; Collagen Damage Repair
+                Conditioner (200ml)
+              </h3>
+              <p class="price">Rs. 695.00</p>
+            </div>
+          </div>
+          <div class="product-card" data-product-index="3">
+            <div class="product-card-image">
+              <img
+                src="https://images.pexels.com/photos/7691165/pexels-photo-7691165.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                alt="Pilgrim Spanish Rosemary & Biotin Anti-Hairfall Conditioner (200ml)"
+                loading="lazy"
+              />
+              <div class="product-card-overlay">
+                <button
+                  class="add-to-cart-btn"
+                  data-product-index="3"
+                  aria-label="Add to cart"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="8" cy="21" r="1" />
+                    <circle cx="19" cy="21" r="1" />
+                    <path
+                      d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                    />
+                  </svg>
+                </button>
+                <button class="quick-view-btn" aria-label="Quick view">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <h3>
+                Pilgrim Spanish Rosemary &amp; Biotin Anti-Hairfall Conditioner
+                (200ml)
+              </h3>
+              <p class="price">Rs. 695.00</p>
+            </div>
+          </div>
+          <div class="product-card" data-product-index="4">
+            <div class="product-card-image">
+              <img
+                src="https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                alt="Pilgrim Redensyl & Anagain Hairfall Control Conditioner (200ml)"
+                loading="lazy"
+              />
+              <div class="product-card-overlay">
+                <button
+                  class="add-to-cart-btn"
+                  data-product-index="4"
+                  aria-label="Add to cart"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="8" cy="21" r="1" />
+                    <circle cx="19" cy="21" r="1" />
+                    <path
+                      d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                    />
+                  </svg>
+                </button>
+                <button class="quick-view-btn" aria-label="Quick view">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <h3>
+                Pilgrim Redensyl &amp; Anagain Hairfall Control Conditioner
+                (200ml)
+              </h3>
+              <p class="price">Rs. 745.00</p>
+            </div>
+          </div>
+          <div class="product-card" data-product-index="5">
+            <div class="product-card-image">
+              <img
+                src="https://images.pexels.com/photos/1213558/pexels-photo-1213558.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                alt="Pilgrim Spanish Rosemary Anti-Hairfall Hair Mask (200g)"
+                loading="lazy"
+              />
+              <div class="product-card-overlay">
+                <button
+                  class="add-to-cart-btn"
+                  data-product-index="5"
+                  aria-label="Add to cart"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="8" cy="21" r="1" />
+                    <circle cx="19" cy="21" r="1" />
+                    <path
+                      d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                    />
+                  </svg>
+                </button>
+                <button class="quick-view-btn" aria-label="Quick view">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <h3>Pilgrim Spanish Rosemary Anti-Hairfall Hair Mask (200g)</h3>
+              <p class="price">Rs. 595.00</p>
+            </div>
+          </div>
+          <div class="product-card" data-product-index="6">
+            <div class="product-card-image">
+              <img
+                src="https://images.pexels.com/photos/30408335/pexels-photo-30408335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                alt="Pilgrim Argan Oil Deep Nourish Hair Mask (200ml)"
+                loading="lazy"
+              />
+              <div class="product-card-overlay">
+                <button
+                  class="add-to-cart-btn"
+                  data-product-index="6"
+                  aria-label="Add to cart"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="8" cy="21" r="1" />
+                    <circle cx="19" cy="21" r="1" />
+                    <path
+                      d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                    />
+                  </svg>
+                </button>
+                <button class="quick-view-btn" aria-label="Quick view">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <h3>Pilgrim Argan Oil Deep Nourish Hair Mask (200ml)</h3>
+              <p class="price">Rs. 595.00</p>
+            </div>
+          </div>
+          <div class="product-card" data-product-index="7">
+            <div class="product-card-image">
+              <img
+                src="https://images.pexels.com/photos/2535913/pexels-photo-2535913.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+                alt="Pilgrim Korean Rice Water & Collagen Damage Repair Hair Mask (200gm)"
+                loading="lazy"
+              />
+              <div class="product-card-overlay">
+                <button
+                  class="add-to-cart-btn"
+                  data-product-index="7"
+                  aria-label="Add to cart"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="8" cy="21" r="1" />
+                    <circle cx="19" cy="21" r="1" />
+                    <path
+                      d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+                    />
+                  </svg>
+                </button>
+                <button class="quick-view-btn" aria-label="Quick view">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <h3>
+                Pilgrim Korean Rice Water &amp; Collagen Damage Repair Hair Mask
+                (200gm)
+              </h3>
+              <p class="price">Rs. 595.00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best Deals / Brands -->
+    <section class="brands-section">
+      <div class="section-header reveal">
+        <h2>Best Deals</h2>
+        <p>Shop from your favorite brands</p>
+        <div class="section-title-line"></div>
+      </div>
+      <div class="brands-marquee" id="brandsMarquee">
+        <div class="brand-card">MAC</div>
+        <div class="brand-card">Dior</div>
+        <div class="brand-card">Chanel</div>
+        <div class="brand-card">Huda Beauty</div>
+        <div class="brand-card">Anastasia</div>
+        <div class="brand-card">Fenty Beauty</div>
+        <div class="brand-card">Charlotte Tilbury</div>
+        <div class="brand-card">NARS</div>
+        <div class="brand-card">Gucci</div>
+        <div class="brand-card">Clinique</div>
+        <div class="brand-card">Estee Lauder</div>
+        <div class="brand-card">Bobbi Brown</div>
+        <div class="brand-card">Too Faced</div>
+        <div class="brand-card">Kryolan</div>
+        <div class="brand-card">Glow Recipe</div>
+        <div class="brand-card">Rare Beauty</div>
+        <div class="brand-card">Olaplex</div>
+        <div class="brand-card">Patrick Ta</div>
+        <div class="brand-card">Dyson</div>
+        <div class="brand-card">Kosas</div>
+        <div class="brand-card">MAC</div>
+        <div class="brand-card">Dior</div>
+        <div class="brand-card">Chanel</div>
+        <div class="brand-card">Huda Beauty</div>
+        <div class="brand-card">Anastasia</div>
+        <div class="brand-card">Fenty Beauty</div>
+        <div class="brand-card">Charlotte Tilbury</div>
+        <div class="brand-card">NARS</div>
+        <div class="brand-card">Gucci</div>
+        <div class="brand-card">Clinique</div>
+        <div class="brand-card">Estee Lauder</div>
+        <div class="brand-card">Bobbi Brown</div>
+        <div class="brand-card">Too Faced</div>
+        <div class="brand-card">Kryolan</div>
+        <div class="brand-card">Glow Recipe</div>
+        <div class="brand-card">Rare Beauty</div>
+        <div class="brand-card">Olaplex</div>
+        <div class="brand-card">Patrick Ta</div>
+        <div class="brand-card">Dyson</div>
+        <div class="brand-card">Kosas</div>
+      </div>
+    </section>
+
+    <!-- Promo Banners -->
+    <section class="section">
+      <div class="promo-banners reveal">
+        <div class="promo-banner">
+          <img
+            src="https://images.pexels.com/photos/29982967/pexels-photo-29982967.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            alt="Deodorant & Fragrance Stick"
+            loading="lazy"
+          />
+          <div class="promo-banner-overlay">
+            <h3>Deodorant &amp; Fragrance Stick</h3>
+            <p>Long-lasting fragrances for every occasion</p>
+            <a href="#" class="promo-btn">Shop Now</a>
+          </div>
+        </div>
+        <div class="promo-banner">
+          <img
+            src="https://images.pexels.com/photos/10675391/pexels-photo-10675391.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+            alt="Eye Contact Lenses"
+            loading="lazy"
+          />
+          <div class="promo-banner-overlay">
+            <h3>Eye Contact Lenses</h3>
+            <p>Enhance your look with premium contact lenses</p>
+            <a href="#" class="promo-btn">Discover</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon">&#128666;</div>
+          <h3>Free Shipping</h3>
+          <p>OVER Rs.5000/-</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">&#128222;</div>
+          <h3>SUPPORT 11AM TO 7PM</h3>
+          <p>18008899590</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">&#128172;</div>
+          <h3>Online Support</h3>
+          <p>11AM to 7PM Closed On Last Sunday</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">&#128179;</div>
+          <h3>Flexible Payment</h3>
+          <p>Pay with Multiple Credit Cards</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about-section reveal">
+      <h2>Garg Traders</h2>
+      <p>
+        Unleash your true beauty at Garg Traders. It is time to feed your skin.
+        We, at Garg Traders, are waiting to serve you forever because your glow
+        is our success.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Garg<span>Traders</span></h3>
+          <p>
+            Unleash your true beauty at Garg Traders. It is time to feed your
+            skin. We are waiting to serve you forever because your glow is our
+            success.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg
+            ></a>
+            <a href="#" aria-label="Facebook"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                /></svg
+            ></a>
+            <a href="#" aria-label="Twitter"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 30-9.4 57-39 38C3 53 9 29 36 29c-3-1.6-7-3-10-3 0 0 2 9 9 13"
+                /></svg
+            ></a>
+            <a href="#" aria-label="YouTube"
+              ><svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.56 49.56 0 0 1-16.2 0A2 2 0 0 1 2.5 17"
+                />
+                <path d="m10 15 5-3-5-3z" /></svg
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>USEFUL LINKS</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns &amp; Refunds</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>INFORMATION</h4>
+          <ul>
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Order Tracking</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Brands</a></li>
+            <li><a href="#">Gift Cards</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact">
+          <h4>OUR STORE</h4>
+          <p>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            18008899590
+          </p>
+          <p>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            <a href="mailto:contact@gargtrader.com">contact@gargtrader.com</a>
+          </p>
+          <p>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            11AM to 7PM (Closed on Last Sunday)
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Garg Traders. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+      <div class="cart-header">
+        <h3>Shopping Cart</h3>
+        <button class="cart-close" id="cartClose" aria-label="Close cart">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <div class="cart-empty">
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="8" cy="21" r="1" />
+            <circle cx="19" cy="21" r="1" />
+            <path
+              d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
+            />
+          </svg>
+          <p>Your cart is empty</p>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span class="cart-total-amount" id="cartTotal">Rs. 0.00</span>
+        </div>
+        <button class="cart-checkout-btn" id="checkoutBtn" disabled>
+          Checkout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="20 6 9 17 4 12" />
+      </svg>
+      <span id="toastMessage">Added to cart!</span>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
